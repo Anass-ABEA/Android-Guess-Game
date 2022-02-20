@@ -1,7 +1,7 @@
 # Project => Guess Game
 ## Branches
 
-1. [main](https://github.com/Anass-ABEA/Android-Guess-Game/tree/main)
+1. [master](https://github.com/Anass-ABEA/Android-Guess-Game/tree/master)
 
 Simple application with predefined settings that can be changed while the application is running (the settings are reset once the application is restarted). If the user wins, they can replay.
 
