@@ -176,5 +176,47 @@
             </GridLayout>
 
         </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <ImageView
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_cold"/>
+            
+            <ImageView
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_coldish"/>
+            
+            <ImageView
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_warm"/>
+
+            <ImageView
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_hotish"/>
+            
+            <ImageView
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_hot"/>
+            
+            <ImageView
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_super_hot"/>
+            
+        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

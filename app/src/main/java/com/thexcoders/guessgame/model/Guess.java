@@ -43,6 +43,7 @@ public class Guess {
         storageHelper.setHot(SO_HOT);
         storageHelper.setSoHot(SO_HOT);
         storageHelper.setSuperHot(SUPER_HOT);
+        storageHelper.save();
     }
 
     public static void getStoredData(Context context) {
@@ -76,7 +77,7 @@ public class Guess {
 
     private void generateNum() {
         double rand = Math.random();
-        number = (int) (rand * (MAX - MIN));
+        number = (int) (rand * (MAX - MIN)) + MIN;
         Log.e("Number is ", "" + number);
     }
 

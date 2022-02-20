@@ -75,4 +75,7 @@ public class StorageHelper {
         spEditor.putInt("super_hot", val);
     }
 
+    public void save() {
+        spEditor.apply();
+    }
 }

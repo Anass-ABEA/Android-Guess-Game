@@ -14,7 +14,7 @@ public class SettingsActivity extends AppCompatActivity {
     private EditText editMax, editMin;
     private EditText editCold, editWarm, editHot, editSoHot, editSuperHot;
 
-    private Button btnSave;
+    private Button btnSave,btnPermaSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,18 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void clickListeners() {
         btnSave.setOnClickListener(v -> {
+            Guess.MIN = getIntegerValue(editMin);
+            Guess.MAX = getIntegerValue(editMax);
+
+            Guess.LITTLE_COLD = getIntegerValue(editCold);
+            Guess.WARM = getIntegerValue(editWarm);
+            Guess.HOT = getIntegerValue(editHot);
+            Guess.SO_HOT = getIntegerValue(editSoHot);
+            Guess.SUPER_HOT = getIntegerValue(editSuperHot);
+            onBackPressed();
+        });
+
+        btnPermaSave.setOnClickListener(v -> {
             Guess.MIN = getIntegerValue(editMin);
             Guess.MAX = getIntegerValue(editMax);
 
@@ -76,5 +88,6 @@ public class SettingsActivity extends AppCompatActivity {
         editSuperHot = findViewById(R.id.edit_super_hot);
 
         btnSave = findViewById(R.id.btn_save);
+        btnPermaSave = findViewById(R.id.btn_perma_save);
     }
 }
