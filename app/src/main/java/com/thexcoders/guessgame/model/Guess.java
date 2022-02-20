@@ -1,6 +1,9 @@
 package com.thexcoders.guessgame.model;
 
+import android.content.Context;
 import android.util.Log;
+
+import com.thexcoders.guessgame.storage.StorageHelper;
 
 public class Guess {
 
@@ -17,8 +20,8 @@ public class Guess {
 
     private int number;
     private int tries = 0;
-    public static  int MIN = 0;
-    public static  int MAX = 100;
+    public static int MIN = 0;
+    public static int MAX = 100;
 
     public static int SUPER_HOT = 5;
     public static int SO_HOT = 10;
@@ -26,9 +29,32 @@ public class Guess {
     public static int WARM = 20;
     public static int LITTLE_COLD = 30;
 
-
     public Guess() {
         generateNum();
+    }
+
+    public static void persistData(Context context) {
+        StorageHelper storageHelper = new StorageHelper(context, true);
+        storageHelper.setMin(MIN);
+        storageHelper.setMax(MAX);
+
+        storageHelper.setLittleCold(LITTLE_COLD);
+        storageHelper.setWarm(WARM);
+        storageHelper.setHot(SO_HOT);
+        storageHelper.setSoHot(SO_HOT);
+        storageHelper.setSuperHot(SUPER_HOT);
+    }
+
+    public static void getStoredData(Context context) {
+        StorageHelper storageHelper = new StorageHelper(context);
+        Guess.MIN = storageHelper.getMin();
+        Guess.MAX = storageHelper.getMax();
+
+        Guess.LITTLE_COLD = storageHelper.getLittleCold();
+        Guess.WARM = storageHelper.getWarm();
+        Guess.HOT = storageHelper.getHot();
+        Guess.SO_HOT = storageHelper.getSoHot();
+        Guess.SUPER_HOT = storageHelper.getSuperHot();
     }
 
     public GuessFeedback getFeedback(int val) {
@@ -51,7 +77,7 @@ public class Guess {
     private void generateNum() {
         double rand = Math.random();
         number = (int) (rand * (MAX - MIN));
-        Log.e("Number is ", ""+number);
+        Log.e("Number is ", "" + number);
     }
 
 

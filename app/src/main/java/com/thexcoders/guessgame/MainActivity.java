@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             userInput.setText("");
         });
 
-        btnSettings.setOnClickListener(v->{
+        btnSettings.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SettingsActivity.class));
         });
     }
@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnSettings = findViewById(R.id.btn_settings);
 
+        Guess.getStoredData(MainActivity.this);
         guessGame = new Guess();
         Log.e("VALUE", "" + guessGame.getNumber());
 

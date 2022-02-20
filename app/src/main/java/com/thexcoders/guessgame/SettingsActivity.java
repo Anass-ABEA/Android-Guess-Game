@@ -38,6 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
             Guess.HOT = getIntegerValue(editHot);
             Guess.SO_HOT = getIntegerValue(editSoHot);
             Guess.SUPER_HOT = getIntegerValue(editSuperHot);
+            Guess.persistData(SettingsActivity.this);
             onBackPressed();
         });
     }
